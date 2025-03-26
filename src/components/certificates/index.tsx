@@ -1,7 +1,20 @@
-import { Card, CardContent, Typography, Link, Grid } from "@mui/material";
+import { Card, CardContent, Typography, Link } from "@mui/material";
 import { motion } from "framer-motion";
+interface Certificate {
+  title: string;
+  date: string;
+  credentialId?: string;
+  organization: string;
+  logo?: string;
+  link?: string;
+}
 
-const CertificateCard = ({ cert, index }) => {
+interface CertificateCardProps {
+  cert: Certificate;
+  index: number;
+}
+
+const CertificateCard: React.FC<CertificateCardProps>  = ({ cert, index }) => {
   return (
     <motion.div
       whileHover={{ scale: 1.03 }}

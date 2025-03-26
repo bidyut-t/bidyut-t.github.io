@@ -1,3 +1,4 @@
+import React from 'react'
 import {
   Grid,
   Typography,
@@ -5,7 +6,6 @@ import {
   Box,
   IconButton,
   Stack,
-  Avatar,
 } from "@mui/material";
 import { useTheme } from "@mui/material";
 import {
@@ -128,8 +128,8 @@ const Home = () => {
                   <img
                     src="./images/bidyutnew.jpg"
                     alt="me"
-                    style={classes.image}
-                  />
+                    style={classes.image as React.CSSProperties}
+                  /> 
                 </div>
               </div>
             </Grid>
@@ -218,8 +218,10 @@ const Home = () => {
               xs={12}
               md={6}
               p={6}
-              align="center"
-              sx={classes.aboutImage}
+              sx={{ 
+                textAlign: "center", 
+                ...classes.aboutImage
+              }}
             >
               <img
                 src="./images/productivity4.png"

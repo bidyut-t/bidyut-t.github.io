@@ -22,11 +22,7 @@ const ContactUsComponent = () => {
     <>
       <Grid container spacing={1} sx={classes.container}>
         <Grid item xs={12} alignItems="center">
-          <Typography
-            sx={classes.heading}
-            gutterBottom
-            align="center"
-          >
+          <Typography sx={classes.heading} gutterBottom align="center">
             Send me a message!
           </Typography>
           <Typography sx={classes.subHeading} align="center">
@@ -67,7 +63,13 @@ const ContactUsComponent = () => {
                   variant="filled"
                 />
               </Grid>
-              <Grid item xs={12} align="center">
+              <Grid
+                item
+                xs={12}
+                sx={{
+                  textAlign: "center",
+                }}
+              >
                 <Button variant="outlined" sx={classes.submitButton}>
                   Send &nbsp;
                   <KeyboardDoubleArrowRightIcon />

@@ -4,7 +4,6 @@ import {
   Typography,
   Card,
   LinearProgress,
-  useTheme,
   Avatar,
 } from "@mui/material";
 import { motion } from "framer-motion";

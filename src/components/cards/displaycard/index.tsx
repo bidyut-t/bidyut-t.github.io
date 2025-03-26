@@ -1,5 +1,4 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import {
   Button,
   Card,
@@ -25,7 +24,6 @@ const DisplayCard: React.FC<DisplayCardProps> = ({
   title,
   content,
   buttonText,
-  nextroute,
   style,
 }) => {
   const theme = useTheme();

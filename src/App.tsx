@@ -3,8 +3,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 
 import theme from "./theme";
-// @ts-expect-error @ts-ignore
-// import RoutesIndex from "./routes";
+
 import Home from "./pages/home";
 
 function App() {

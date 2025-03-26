@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import {
   AppBar,
   Toolbar,
@@ -66,13 +66,20 @@ const Header = () => {
       transition={{ duration: 0.3 }}
       style={{ position: "fixed", width: "100%", top: 0, zIndex: 1000 }}
     >
-      <AppBar position="static" sx={{ backgroundColor: "white", boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)", }} elevation={0}>
+      <AppBar
+        position="static"
+        sx={{
+          backgroundColor: "white",
+          boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
+        }}
+        elevation={0}
+      >
         <Toolbar
           style={{
             display: "flex",
             justifyContent: "space-between",
             marginLeft: "8rem",
-            marginRight:"8rem"
+            marginRight: "8rem",
           }}
         >
           <Typography variant="h5" color="primary" sx={{ fontWeight: "400" }}>
@@ -82,20 +89,14 @@ const Header = () => {
             <div className="hidden md:flex">
               <Tabs
                 value={activeTab}
-                onChange={(e, newValue) => setActiveTab(newValue)}
+                // onChange={(newValue) => setActiveTab(newValue)}
                 textColor="primary"
                 indicatorColor="primary"
               >
                 {sections.map((section, index) => (
                   <Tab
-                    key={section}
+                    key={index}
                     label={section.charAt(0).toUpperCase() + section.slice(1)}
-                    onClick={() => {
-                      document
-                        .getElementById(section)
-                        .scrollIntoView({ behavior: "smooth" });
-                      setActiveTab(index);
-                    }}
                   />
                 ))}
               </Tabs>
@@ -116,15 +117,13 @@ const Header = () => {
           <List>
             {sections.map((section, index) => (
               <ListItem
-                button
+                component="button"
                 key={section}
                 onClick={() => {
-                  document
-                    .getElementById(section)
-                    .scrollIntoView({ behavior: "smooth" });
                   setActiveTab(index);
                   setMobileOpen(false);
                 }}
+                sx={{ textAlign: "left" }} // Optional: Ensures left-aligned text inside button
               >
                 <ListItemText
                   primary={section.charAt(0).toUpperCase() + section.slice(1)}
