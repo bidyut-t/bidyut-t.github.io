@@ -111,7 +111,6 @@ const Resume = () => {
     <Box
       sx={{
         padding: "60px 8%",
-        backgroundColor: "#f4f4f4",
         display: "flex",
         justifyContent: "center",
       }}

@@ -1,32 +1,15 @@
 import { Box, Typography, Card, CardContent, useTheme } from "@mui/material";
+import { educationData } from "../../contants";
 
-const educationData = [
-  {
-    logo: "https://upload.wikimedia.org/wikipedia/en/7/78/Gauhati_University_Logo.jpeg",
-    degree: "Bachelor of Technology",
-    field: "Computer Science & Engineering",
-    institution: "Gauhati University",
-    startDate: "Aug-2016",
-    endDate: "Oct-2020",
-    grade: "9.54 CGPA",
-  },
-  {
-    logo: "https://cottonuniversity.ac.in/storage/uploads/page/025403c253eab05a949dc9eaff23fae2a3edb9.jpg",
-    degree: "Higher Secondary",
-    field: "Science Stream(PCM)",
-    institution: "Cotton University",
-    startDate: "Jul-2013",
-    endDate: "Jul-2015",
-    grade: "85%",
-  },
-];
+import styles from "./style";
 
 const EducationSection = () => {
   const theme = useTheme();
+  const classes = styles(theme);
 
   return (
     <Box
-      sx={{ padding: { xs: "2rem", md: "4rem" }, backgroundColor: "#F6F6F6" }}
+      sx={classes.container}
     >
       <Typography variant="h4" textAlign="center" mb={4}>
         Education
@@ -35,16 +18,9 @@ const EducationSection = () => {
         {educationData.map((edu, index) => (
           <Card
             key={index}
-            sx={{
-              display: "flex",
-              flexDirection: { xs: "column", md: "row" }, // Responsive layout
-              width: { xs: "100%", sm: "100%", md: "100%" },
-              maxWidth: "800px",
-              boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
-              borderRadius: "16px",
-            }}
+            sx={classes.card}
           >
-            <CardContent sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+            <CardContent sx={classes.cardContent}>
               <Box
                 component="img"
                 src={edu.logo}
@@ -52,13 +28,13 @@ const EducationSection = () => {
                 sx={{ width: { xs: 50, md: 60 }, height: { xs: 50, md: 60 } }}
               />
               <Box>
-                <Typography variant="h6" fontWeight="bold">
+                <Typography sx={classes.degreeText}>
                   {edu.degree}
                 </Typography>
-                <Typography variant="h5" fontWeight="600">
+                <Typography sx={classes.fieldText}>
                   {edu.field}
                 </Typography>
-                <Typography variant="body1" color="text.secondary">
+                <Typography sx={classes.institutionText}>
                   {edu.institution}
                 </Typography>
                 <Typography
@@ -71,18 +47,10 @@ const EducationSection = () => {
               </Box>
             </CardContent>
             <Box
-              sx={{
-                marginLeft: { xs: 0, md: "auto" },
-                alignItems: "center",
-                padding: 2,
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-                color:theme.palette.primary.main,
-              }}
+              sx={classes.rightSection}
             >
               <Typography>{edu.endDate}</Typography>
-              <Box sx={{ borderLeft: `2px solid ${theme.palette.primary.main}`, height: "40px" }} />
+              <Box sx={classes.verticalDivider} />
               <Typography>{edu.startDate}</Typography>
             </Box>
           </Card>

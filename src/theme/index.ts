@@ -33,29 +33,35 @@ declare module "@mui/material/styles" {
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#161F2A",
+      main: "#1E1E2F",     // Deep tech navy
+      light: "#2E2E42",    // Slightly lighter for subtle contrast
     },
     secondary: {
-      main: "#3D155F",
+      main: "#6C63FF",     // AI-like calming purple
+      light: "#D1D0FF",    // Soft lavender for hover backgrounds
     },
     tertiary: {
-      main: "#CCF381",
-      light: "#f3fbdb",
+      main: "#A0E7E5",     // Friendly, minty accent
+      light: "#E0FCFB",    // Background hover/glow
+    },
+    background: {
+      default: "#F8FAFC",  // Light gray background
+      paper: "#FFFFFF",    // White cards
     },
   },
   typography: {
     h1: {
       fontSize: "2.5rem",
     },
-    fontFamily: ["Interval Pro Regular", "sans-serif"].join(","),
+    fontFamily: ["'Inter'", "sans-serif"].join(","),
   },
   grid: {
-    fontFamily: ["Interval Pro Regular", "sans-serif"].join(","),
+    fontFamily: ["'Inter'", "sans-serif"].join(","),
   },
   effects: {
-    boxShadow: "0 1px 4px #0000001f !important",
-    textShadow: "0 1px 1px #0000001f",
-    transition: "all .25s cubic-bezier(0.4, 0, 0.2, 1) !important",
+    boxShadow: "0 4px 12px rgba(0, 0, 0, 0.04) !important",
+    textShadow: "0 1px 2px rgba(0, 0, 0, 0.06)",
+    transition: "all 0.3s ease-in-out !important",
   },
 });
 

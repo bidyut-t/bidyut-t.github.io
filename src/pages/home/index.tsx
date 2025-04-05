@@ -163,7 +163,7 @@ const Home = () => {
                 left: 0,
                 width: "100%",
                 height: "80px",
-                backgroundColor: "white",
+                backgroundColor: theme.palette.background.default,
                 borderRadius: "0 0 50% 50%",
               }}
             />
@@ -224,6 +224,30 @@ const Home = () => {
           </Grid>
         </Grid>
 
+        <Grid item xs={12}>
+          <Box
+            sx={{
+              width: "100%",
+              height: "150px",
+              backgroundColor: theme.palette.background.default,
+              position: "relative",
+              mt: -5,
+            }}
+          >
+            {/* Wave at the top */}
+            <Box
+              sx={{
+                position: "absolute",
+                left: 0,
+                width: "100%",
+                height: "80px",
+                backgroundColor: theme.palette.primary.main,
+                borderRadius: "0 0 50% 50%",
+              }}
+            />
+          </Box>
+        </Grid>
+
         <Grid item xs={12} id={sections[2]}>
           <Resume />
         </Grid>
@@ -231,7 +255,7 @@ const Home = () => {
         <Grid item xs={12} id={sections[3]}>
           <Grid container spacing={2} sx={classes.paddingContainer}>
             <Grid item xs={12}>
-              <Typography variant="h3" align="center" gutterBottom>
+              <Typography variant="h4" align="center" gutterBottom>
                 Certificates & Awards
               </Typography>
             </Grid>
