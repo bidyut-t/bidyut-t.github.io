@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import {
   Grid,
   Typography,
@@ -27,40 +27,44 @@ import EducationSection from "../../components/Education/index.tsx";
 
 const certificates = [
   {
-    title: "AWS Academy Data Analytics",
-    date: "May 03, 2022",
+    title: "Graph Developer - Associate",
+    date: "Jan 21, 2025",
+    credentialId: "af7cfd27-1ece-4d54-a6a1-d6aa33f3558e",
+    organization: "Apollo GraphQL",
+    link: "https://www.apollographql.com/tutorials/certifications/af7cfd27-1ece-4d54-a6a1-d6aa33f3558e",
+    logo: "https://www.apollographql.com/_next/image?url=https%3A%2F%2Fwww.datocms-assets.com%2F102461%2F1739903846-rocket.png&w=1920&q=100",
+  },
+  {
+    title: "SQL Certified",
+    date: "Jan 31, 2022",
+    credentialId: "AF52DDB5E0B1",
+    organization: "HackerRank",
+    link: "https://www.hackerrank.com/certificates/af52ddb5e0b1",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/4/40/HackerRank_Icon-1000px.png",
+  },
+  {
+    title: "Hack for health - Hackathon, IIT Guwahati",
+    date: "Jan, 2019",
     credentialId: "",
-    organization: "AWS Academy",
+    organization: "IIT Guwahati",
+    link: "https://www.linkedin.com/in/bidyut-talukdar/details/honors",
+    logo: "https://event.iitg.ac.in/icann2019/Proceedings_LaTeX/2019/IITG_logo.png",
   },
   {
-    title: "Certified Angular Developer",
-    date: "Sept 13, 2020",
-    credentialId: "80e8e2b06532",
-    organization: "Hackerrank",
-  },
-  {
-    title: "Data Structures",
-    date: "Aug 23, 2020",
-    credentialId: "WUSAKQ9WSVBEK",
-    organization: "UC San Diego",
-  },
-  {
-    title: "Advanced Algorithms",
-    date: "Jul 12, 2022",
-    credentialId: "8YY76VGCAT2J",
-    organization: "UC San Diego",
-  },
-  {
-    title: "Database Programming with SQL",
-    date: "Jan 16, 2017",
+    title: "Above & Beyond",
+    date: "Dec, 2023",
     credentialId: "",
-    organization: "Oracle Academy",
+    organization: "Tezo",
+    link: "https://www.linkedin.com/in/bidyut-talukdar/details/honors",
+    logo: "https://tezo.com/wp-content/uploads/2023/10/TezoLogo.svg",
   },
   {
-    title: "Database Design",
-    date: "Jan 16, 2017",
+    title: "Code Fest'18, organised by T&P Cell",
+    date: "Sept, 2019",
     credentialId: "",
-    organization: "Oracle Academy",
+    organization: "GUIST",
+    link: "https://www.linkedin.com/in/bidyut-talukdar/details/honors",
+    logo: "https://upload.wikimedia.org/wikipedia/en/7/78/Gauhati_University_Logo.jpeg",
   },
 ];
 
@@ -129,7 +133,7 @@ const Home = () => {
                     src="./images/bidyutnew.jpg"
                     alt="me"
                     style={classes.image as React.CSSProperties}
-                  /> 
+                  />
                 </div>
               </div>
             </Grid>
@@ -218,9 +222,9 @@ const Home = () => {
               xs={12}
               md={6}
               p={6}
-              sx={{ 
-                textAlign: "center", 
-                ...classes.aboutImage
+              sx={{
+                textAlign: "center",
+                ...classes.aboutImage,
               }}
             >
               <img
@@ -240,7 +244,7 @@ const Home = () => {
           <Grid container spacing={2} sx={classes.paddingContainer}>
             <Grid item xs={12}>
               <Typography variant="h3" align="center" gutterBottom>
-                Certificates
+                Certificates & Awards
               </Typography>
             </Grid>
             {certificates.map((cert, index) => (
@@ -251,7 +255,7 @@ const Home = () => {
           </Grid>
         </Grid>
 
-        <Grid item xs={12} sx={{mb:2}}>
+        <Grid item xs={12} sx={{ mb: 2 }}>
           <Grid container justifyContent="center" sx={{ mt: 3 }}>
             <Button
               variant="contained"
@@ -276,7 +280,7 @@ const Home = () => {
         </Grid>
 
         <Grid item xs={12}>
-          <EducationSection/>
+          <EducationSection />
         </Grid>
 
         <Grid item xs={12} mb={1}>

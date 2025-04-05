@@ -7,6 +7,7 @@ import {
   Avatar,
 } from "@mui/material";
 import { motion } from "framer-motion";
+
 const skills = [
   {
     category: "Web Development",
@@ -105,7 +106,7 @@ const experiences = [
 ];
 
 const Resume = () => {
-
+  
   return (
     <Box
       sx={{
