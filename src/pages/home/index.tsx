@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  Grid,
-  Typography,
-  Button,
-  Box,
-  IconButton,
-  Stack,
-} from "@mui/material";
+import { Grid, Typography, Box, IconButton, Stack } from "@mui/material";
 import { useTheme } from "@mui/material";
 import {
   Email,
@@ -14,16 +7,20 @@ import {
   LocationOn,
   GitHub,
   LinkedIn,
-  Instagram,
-  Facebook,
   Language,
 } from "@mui/icons-material";
-import ContactUsComponent from "../../components/contactus";
-import styles from "./style";
-import Resume from "../../components/resume/index.tsx";
-import CertificateCard from "../../components/certificates/index.tsx";
+
 import Header from "../../components/header/index.tsx";
+import Resume from "../../components/resume/index.tsx";
 import EducationSection from "../../components/Education/index.tsx";
+import CertificateCard from "../../components/certificates/index.tsx";
+import ContactUsComponent from "../../components/contactus";
+
+import ResumeDownloadButton from "../../components/common/resumeDownloadButton/index.tsx";
+
+import { sections } from "../../contants/index.ts";
+
+import styles from "./style";
 
 const certificates = [
   {
@@ -79,7 +76,7 @@ const Home = () => {
           <Header />
         </Grid>
 
-        <Grid item xs={12}>
+        <Grid item xs={12} id={sections[0]}>
           <Grid container sx={classes.paddingContainer}>
             <Grid item xs={12} md={7} lg={8} sx={classes.aboutSectionOne}>
               <Grid container sx={classes.aboutContainer} spacing={1}>
@@ -106,19 +103,28 @@ const Home = () => {
                   </Stack>
 
                   <Stack direction="row" spacing={1} sx={{ mt: 2 }}>
-                    <IconButton>
-                      <Facebook />
-                    </IconButton>
-                    <IconButton>
-                      <Instagram />
-                    </IconButton>
-                    <IconButton>
+                    <IconButton
+                      component="a"
+                      href="https://www.linkedin.com/in/bidyut-talukdar/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <LinkedIn />
                     </IconButton>
-                    <IconButton>
+                    <IconButton
+                      component="a"
+                      href="https://github.com/bidyut-t"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <GitHub />
                     </IconButton>
-                    <IconButton>
+                    <IconButton
+                      component="a"
+                      href="https://bidyut-t.github.io/portfolio/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <Language />
                     </IconButton>
                   </Stack>
@@ -164,7 +170,7 @@ const Home = () => {
           </Box>
         </Grid>
 
-        <Grid item xs={12} sx={classes.summary}>
+        <Grid item xs={12} sx={classes.summary} id={sections[1]}>
           <Grid container sx={classes.summaryContainer}>
             <Grid item xs={12} md={6}>
               <Typography
@@ -196,25 +202,7 @@ const Home = () => {
                 deliver exceptional user experiences.
               </p>
               <Grid container justifyContent="center" sx={{ mt: 3 }}>
-                <Button
-                  variant="contained"
-                  sx={{
-                    backgroundColor: theme.palette.tertiary.main,
-                    color: theme.palette.primary.main,
-                    px: 4,
-                    py: 1.5,
-                    borderRadius: 2,
-                    fontSize: "1rem",
-                    animation: "breath 3s ease-in-out infinite",
-                    "@keyframes breath": {
-                      "0%": { transform: "scale(1)" },
-                      "50%": { transform: "scale(1.05)" },
-                      "100%": { transform: "scale(1)" },
-                    },
-                  }}
-                >
-                  Resume
-                </Button>
+                <ResumeDownloadButton />
               </Grid>
             </Grid>
             <Grid
@@ -236,11 +224,11 @@ const Home = () => {
           </Grid>
         </Grid>
 
-        <Grid item xs={12}>
+        <Grid item xs={12} id={sections[2]}>
           <Resume />
         </Grid>
 
-        <Grid item xs={12}>
+        <Grid item xs={12} id={sections[3]}>
           <Grid container spacing={2} sx={classes.paddingContainer}>
             <Grid item xs={12}>
               <Typography variant="h3" align="center" gutterBottom>
@@ -253,37 +241,16 @@ const Home = () => {
               </Grid>
             ))}
           </Grid>
-        </Grid>
-
-        <Grid item xs={12} sx={{ mb: 2 }}>
           <Grid container justifyContent="center" sx={{ mt: 3 }}>
-            <Button
-              variant="contained"
-              sx={{
-                backgroundColor: theme.palette.tertiary.main,
-                color: theme.palette.primary.main,
-                px: 4,
-                py: 1.5,
-                borderRadius: 2,
-                fontSize: "1rem",
-                animation: "breath 3s ease-in-out infinite",
-                "@keyframes breath": {
-                  "0%": { transform: "scale(1)" },
-                  "50%": { transform: "scale(1.05)" },
-                  "100%": { transform: "scale(1)" },
-                },
-              }}
-            >
-              Resume
-            </Button>
+            <ResumeDownloadButton />
           </Grid>
         </Grid>
 
-        <Grid item xs={12}>
+        <Grid item xs={12} id={sections[4]}>
           <EducationSection />
         </Grid>
 
-        <Grid item xs={12} mb={1}>
+        <Grid item xs={12} mb={1} id={sections[5]}>
           <ContactUsComponent />
         </Grid>
       </Grid>

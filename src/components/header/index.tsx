@@ -15,6 +15,9 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import { motion } from "framer-motion";
 import { useTheme } from "@mui/material/styles";
+
+import { sections } from "../../contants";
+
 const Header = () => {
   const [activeTab, setActiveTab] = useState(0);
   const [showHeader, setShowHeader] = useState(true);
@@ -24,15 +27,6 @@ const Header = () => {
   const isSmallDevice = useMediaQuery(theme.breakpoints.down("md"));
 
   let lastScrollY = 0;
-
-  const sections = [
-    "home",
-    "about",
-    "skills",
-    "projects",
-    "certificates",
-    "contact",
-  ];
 
   const handleScroll = () => {
     const currentScrollY = window.scrollY;
@@ -92,11 +86,19 @@ const Header = () => {
                 // onChange={(newValue) => setActiveTab(newValue)}
                 textColor="primary"
                 indicatorColor="primary"
+                
               >
                 {sections.map((section, index) => (
                   <Tab
                     key={index}
                     label={section.charAt(0).toUpperCase() + section.slice(1)}
+                    onClick={() => {
+                      const element = document.getElementById(section);
+                      if (element) {
+                        element.scrollIntoView({ behavior: "smooth", block: "start" });
+                      }
+                      setActiveTab(index);
+                    }}
                   />
                 ))}
               </Tabs>
@@ -120,6 +122,10 @@ const Header = () => {
                 component="button"
                 key={section}
                 onClick={() => {
+                  const element = document.getElementById(section);
+                  if (element) {
+                    element.scrollIntoView({ behavior: "smooth", block: "start" });
+                  }
                   setActiveTab(index);
                   setMobileOpen(false);
                 }}
