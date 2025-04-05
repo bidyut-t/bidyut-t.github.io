@@ -17,7 +17,7 @@ const styles = (theme: Theme) => ({
     // backgroundImage: 'linear-gradient(to right, #161F2A , #e6e6e6)',
     alignItems: "left",
     [theme.breakpoints.down("md")]: {
-      backgroundImage: "linear-gradient(to right, #161F2A , #161F2A)",
+      marginTop: theme.spacing(10)
     },
   },
   aboutSectionTwo: {
@@ -81,6 +81,9 @@ const styles = (theme: Theme) => ({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+    [theme.breakpoints.down("md")]: {
+      display:'none'
+    },
   },
   imageContainer: {
     backgroundColor: theme.palette.tertiary.main,
