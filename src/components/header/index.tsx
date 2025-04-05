@@ -72,8 +72,8 @@ const Header = () => {
           style={{
             display: "flex",
             justifyContent: "space-between",
-            marginLeft: "8rem",
-            marginRight: "8rem",
+            marginLeft: isSmallDevice ? 0 :"8rem",
+            marginRight: isSmallDevice ? 0 : "8rem",
           }}
         >
           <Typography variant="h5" color="primary" sx={{ fontWeight: "400" }}>
@@ -129,10 +129,11 @@ const Header = () => {
                   setActiveTab(index);
                   setMobileOpen(false);
                 }}
-                sx={{ textAlign: "left" }} // Optional: Ensures left-aligned text inside button
+                sx={{ textAlign: "left" , backgroundColor: "white",}} // Optional: Ensures left-aligned text inside button
               >
                 <ListItemText
                   primary={section.charAt(0).toUpperCase() + section.slice(1)}
+                  sx={{ color: theme.palette.primary.main }}
                 />
               </ListItem>
             ))}
