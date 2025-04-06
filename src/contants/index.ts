@@ -199,6 +199,13 @@ export const skills = [
 
 export const experiences = [
   {
+    company: "Marriott Tech Accelerator",
+    position: "Software Engineer",
+    duration: "2024-current",
+    description: "",
+    logo: "https://cdn.freebiesupply.com/logos/large/2x/marriott-logo-png-transparent.png",
+  },
+  {
     company: "Tezo",
     position: "Software Developer",
     duration: "2022 - 2024",
