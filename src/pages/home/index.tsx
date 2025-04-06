@@ -284,7 +284,7 @@ const Home = () => {
           <EducationSection />
         </Grid>
 
-        <Grid item xs={12} mb={1} id={sections[5]}>
+        <Grid item xs={12} id={sections[5]}>
           <ProfileLinksFooter />
         </Grid>
       </Grid>
