@@ -6,7 +6,7 @@ const ResumeDownloadButton = () => {
 
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "/pdf/resume.pdf";
+    link.href = "/portfolio/pdf/resume.pdf";
     link.download = "Bidyut Resume.pdf";
     link.target = "_blank";
     link.click();

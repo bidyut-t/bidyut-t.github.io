@@ -77,7 +77,7 @@ const Header = () => {
             marginRight: isSmallDevice ? 0 : "11rem",
           }}
         >
-          <Typography variant="h5" color="primary" sx={{ fontWeight: "400" }}>
+          <Typography variant="h4" color="primary" sx={{ fontWeight: "400" }}>
             Bidyut Talukdar
           </Typography>
           {!isSmallDevice && (
