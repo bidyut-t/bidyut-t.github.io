@@ -226,9 +226,9 @@ const Home = () => {
               }}
             >
               <img
-                src="./images/productivity4.png"
+                src="/portfolio/images/productivity.png"
                 alt="me"
-                style={{ width: "60%" }}
+                style={{ width: "100%" }}
               />
             </Grid>
           </Grid>
