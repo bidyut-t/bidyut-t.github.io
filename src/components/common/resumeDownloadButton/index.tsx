@@ -10,8 +10,8 @@ const ResumeDownloadButton = () => {
     <Button
       variant="contained"
       sx={{
-        backgroundColor: theme.palette.tertiary.main,
-        color: theme.palette.primary.main,
+        backgroundColor: theme.palette.tertiary.dark,
+        color: 'white',
         px: 4,
         py: 1.5,
         borderRadius: 2,

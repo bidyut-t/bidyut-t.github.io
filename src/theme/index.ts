@@ -43,6 +43,7 @@ const theme = createTheme({
     tertiary: {
       main: "#A0E7E5",     // Friendly, minty accent
       light: "#E0FCFB",    // Background hover/glow
+      dark:"#20b2aa"
     },
     background: {
       default: "#F8FAFC",  // Light gray background

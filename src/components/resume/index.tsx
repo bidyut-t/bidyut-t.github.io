@@ -5,6 +5,7 @@ import {
   Card,
   LinearProgress,
   Avatar,
+  useTheme,
 } from "@mui/material";
 import { motion } from "framer-motion";
 
@@ -106,7 +107,7 @@ const experiences = [
 ];
 
 const Resume = () => {
-  
+  const theme = useTheme();
   return (
     <Box
       sx={{
@@ -160,7 +161,16 @@ const Resume = () => {
                     <LinearProgress
                       variant="determinate"
                       value={skill.level}
-                      sx={{ width: "50%", marginRight: "10px", height: "5px" }}
+                      sx={{
+                        width: "50%",
+                        marginRight: "10px",
+                        height: "6px",
+                        borderRadius: "10px",
+                        "& .MuiLinearProgress-bar": {
+                          borderRadius: "10px",
+                          backgroundColor: theme.palette.tertiary.dark,
+                        },
+                      }}
                     />
                     <Typography>{`${skill.level}%`}</Typography>
                   </Box>
@@ -179,11 +189,11 @@ const Resume = () => {
           <Box
             sx={{
               position: "absolute",
-              top: "90px",
+              top: "160px",
               left: "20px",
               bottom: 0,
               width: "4px",
-              backgroundColor: "#161F2A",
+              backgroundColor: theme.palette.tertiary.dark,
               zIndex: 0,
             }}
           ></Box>
@@ -199,7 +209,7 @@ const Resume = () => {
                   top: "25px",
                   width: "12px",
                   height: "12px",
-                  backgroundColor: "#161F2A",
+                  backgroundColor: theme.palette.tertiary.dark,
                   borderRadius: "50%",
                   zIndex: 1,
                 }}
@@ -223,7 +233,7 @@ const Resume = () => {
                   top: "30px",
                   width: "14px",
                   height: "3px",
-                  backgroundColor: "#161F2A",
+                  backgroundColor: theme.palette.tertiary.dark,
                   borderRadius: "10%",
                   zIndex: 1,
                 }}
@@ -242,7 +252,7 @@ const Resume = () => {
                     marginLeft: "10px",
                     padding: "20px",
                     borderRadius: "20px",
-                    borderLeft: "5px solid #161F2A",
+                    borderLeft: `5px solid ${theme.palette.tertiary.dark}`,
                     display: "flex",
                     justifyContent: "space-between",
                     alignItems: "center",

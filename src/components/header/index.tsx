@@ -86,7 +86,6 @@ const Header = () => {
                 // onChange={(newValue) => setActiveTab(newValue)}
                 textColor="primary"
                 indicatorColor="primary"
-                
               >
                 {sections.map((section, index) => (
                   <Tab

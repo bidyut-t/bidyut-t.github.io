@@ -1,6 +1,12 @@
 import React from "react";
-import { Grid, Typography, Box, IconButton, Stack } from "@mui/material";
-import { useTheme } from "@mui/material";
+import {
+  Grid,
+  Typography,
+  Box,
+  IconButton,
+  Stack,
+  useTheme,
+} from "@mui/material";
 import {
   Email,
   Phone,
@@ -15,55 +21,13 @@ import Resume from "../../components/resume/index.tsx";
 import EducationSection from "../../components/Education/index.tsx";
 import CertificateCard from "../../components/certificates/index.tsx";
 import ContactUsComponent from "../../components/contactus";
+import ProfileLinksFooter from "../../components/profileLinkFooter/index.tsx";
 
 import ResumeDownloadButton from "../../components/common/resumeDownloadButton/index.tsx";
 
-import { sections } from "../../contants/index.ts";
+import { sections, certificates } from "../../contants/index.ts";
 
 import styles from "./style";
-
-const certificates = [
-  {
-    title: "Graph Developer - Associate",
-    date: "Jan 21, 2025",
-    credentialId: "af7cfd27-1ece-4d54-a6a1-d6aa33f3558e",
-    organization: "Apollo GraphQL",
-    link: "https://www.apollographql.com/tutorials/certifications/af7cfd27-1ece-4d54-a6a1-d6aa33f3558e",
-    logo: "https://www.apollographql.com/_next/image?url=https%3A%2F%2Fwww.datocms-assets.com%2F102461%2F1739903846-rocket.png&w=1920&q=100",
-  },
-  {
-    title: "SQL Certified",
-    date: "Jan 31, 2022",
-    credentialId: "AF52DDB5E0B1",
-    organization: "HackerRank",
-    link: "https://www.hackerrank.com/certificates/af52ddb5e0b1",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/4/40/HackerRank_Icon-1000px.png",
-  },
-  {
-    title: "Hack for health - Hackathon, IIT Guwahati",
-    date: "Jan, 2019",
-    credentialId: "",
-    organization: "IIT Guwahati",
-    link: "https://www.linkedin.com/in/bidyut-talukdar/details/honors",
-    logo: "https://event.iitg.ac.in/icann2019/Proceedings_LaTeX/2019/IITG_logo.png",
-  },
-  {
-    title: "Above & Beyond",
-    date: "Dec, 2023",
-    credentialId: "",
-    organization: "Tezo",
-    link: "https://www.linkedin.com/in/bidyut-talukdar/details/honors",
-    logo: "https://tezo.com/wp-content/uploads/2023/10/TezoLogo.svg",
-  },
-  {
-    title: "Code Fest'18, organised by T&P Cell",
-    date: "Sept, 2019",
-    credentialId: "",
-    organization: "GUIST",
-    link: "https://www.linkedin.com/in/bidyut-talukdar/details/honors",
-    logo: "https://upload.wikimedia.org/wikipedia/en/7/78/Gauhati_University_Logo.jpeg",
-  },
-];
 
 const Home = () => {
   const theme = useTheme();
@@ -174,7 +138,7 @@ const Home = () => {
           <Grid container sx={classes.summaryContainer}>
             <Grid item xs={12} md={6}>
               <Typography
-                color={theme.palette.tertiary.main}
+                color={theme.palette.tertiary.dark}
                 sx={classes.overViewSection}
               >
                 About me
@@ -231,7 +195,7 @@ const Home = () => {
               height: "150px",
               backgroundColor: theme.palette.background.default,
               position: "relative",
-              mt: -5,
+              mt: -2,
             }}
           >
             {/* Wave at the top */}
@@ -253,7 +217,7 @@ const Home = () => {
         </Grid>
 
         <Grid item xs={12} id={sections[3]}>
-          <Grid container spacing={2} sx={classes.paddingContainer}>
+          <Grid container spacing={3} sx={classes.paddingContainer}>
             <Grid item xs={12}>
               <Typography variant="h4" align="center" gutterBottom>
                 Certificates & Awards
@@ -275,7 +239,7 @@ const Home = () => {
         </Grid>
 
         <Grid item xs={12} mb={1} id={sections[5]}>
-          <ContactUsComponent />
+          <ProfileLinksFooter />
         </Grid>
       </Grid>
     </>

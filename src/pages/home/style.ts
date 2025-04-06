@@ -86,7 +86,7 @@ const styles = (theme: Theme) => ({
     },
   },
   imageContainer: {
-    backgroundColor: theme.palette.tertiary.main,
+    backgroundColor: theme.palette.tertiary.light,
     padding: "25px",
     borderRadius: "50%",
     display: "flex",
@@ -94,7 +94,7 @@ const styles = (theme: Theme) => ({
     alignItems: "center",
   },
   innerCircle: {
-    backgroundColor: theme.palette.tertiary.light, 
+    backgroundColor: theme.palette.tertiary.main, 
     padding: "20px",
     borderRadius: "50%",
     display: "flex",
