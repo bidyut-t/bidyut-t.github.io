@@ -49,6 +49,7 @@ const ProfileLinksFooter = () => {
                 boxShadow: 3,
                 borderRadius: 2,
               }}
+              onClick={() => window.open(profile.link, "_blank")}
             >
               <CardContent>
                 <Avatar

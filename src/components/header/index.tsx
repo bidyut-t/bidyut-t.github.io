@@ -77,8 +77,8 @@ const Header = () => {
             marginRight: isSmallDevice ? 0 : "11rem",
           }}
         >
-          <Typography variant="h4" color="primary" sx={{ fontWeight: "400" }}>
-            Bidyut Talukdar
+          <Typography color="primary" sx={{ fontWeight: "400", fontSize:'1.9rem' }}>
+             <i> Bidyut Talukdar</i>
           </Typography>
           {!isSmallDevice && (
             <div className="hidden md:flex">
