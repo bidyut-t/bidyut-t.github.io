@@ -20,7 +20,7 @@ import Header from "../../components/header/index.tsx";
 import Resume from "../../components/resume/index.tsx";
 import EducationSection from "../../components/Education/index.tsx";
 import CertificateCard from "../../components/certificates/index.tsx";
-import ContactUsComponent from "../../components/contactus";
+// import ContactUsComponent from "../../components/contactus";
 import ProfileLinksFooter from "../../components/profileLinkFooter/index.tsx";
 
 import ResumeDownloadButton from "../../components/common/resumeDownloadButton/index.tsx";
