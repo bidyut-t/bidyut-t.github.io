@@ -15,6 +15,7 @@ import {
   LinkedIn,
   Language,
 } from "@mui/icons-material";
+import { motion } from "framer-motion";
 
 import Header from "../../components/header/index.tsx";
 import Resume from "../../components/resume/index.tsx";
@@ -45,7 +46,40 @@ const Home = () => {
             <Grid item xs={12} md={7} lg={8} sx={classes.aboutSectionOne}>
               <Grid container sx={classes.aboutContainer} spacing={1}>
                 <Grid item xs={12}>
-                  <Typography variant="h4">Bidyut Talukdar</Typography>
+                  <Box
+                    sx={{
+                      backgroundColor: "#00D7DF",
+                      color: "#fff",
+                      padding: "10px 18px",
+                      borderRadius: "20px 20px 20px 4px",
+                      display: "inline-block",
+                      maxWidth: "fit-content",
+                      animation: "fadeInUp 0.6s ease-out",
+                      "@keyframes fadeInUp": {
+                        "0%": {
+                          opacity: 0,
+                          transform: "translateY(20px)",
+                        },
+                        "50%": {
+                          opacity: 1,
+                          transform: "translateY(04px)",
+                        },
+                        "100%": {
+                          opacity: 1,
+                          transform: "translateY(0)",
+                        },
+                      },
+                    }}
+                  >
+                    <Typography variant="body1" sx={{ fontWeight: 400 }}>
+                      Hello, I'm
+                    </Typography>
+                  </Box>
+                </Grid>
+                <Grid item xs={12}>
+                  <Typography variant="h4" sx={{ mt: 2 }}>
+                    Bidyut Talukdar
+                  </Typography>
                   <Typography variant="h1" sx={classes.aboutTitle}>
                     Software Developer<span>.</span>
                   </Typography>
@@ -97,15 +131,27 @@ const Home = () => {
             </Grid>
 
             <Grid item xs={12} md={5} lg={4} sx={classes.imageDiv}>
-              <div style={classes.imageContainer}>
-                <div style={classes.innerCircle}>
-                  <img
-                    src="./images/bidyutnew.jpg"
-                    alt="me"
-                    style={classes.image as React.CSSProperties}
-                  />
+              <motion.div
+                whileHover={{ scale: 1.03 }}
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{
+                  duration: 0.6,
+                  ease: "easeOut",
+                  delay: 1 * 0.3,
+                }}
+                viewport={{ once: true }}
+              >
+                <div style={classes.imageContainer}>
+                  <div style={classes.innerCircle}>
+                    <img
+                      src="./images/bidyutnew.jpg"
+                      alt="me"
+                      style={classes.image as React.CSSProperties}
+                    />
+                  </div>
                 </div>
-              </div>
+              </motion.div>
             </Grid>
           </Grid>
         </Grid>

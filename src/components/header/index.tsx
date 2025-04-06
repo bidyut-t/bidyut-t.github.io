@@ -65,6 +65,7 @@ const Header = () => {
         sx={{
           backgroundColor: "white",
           boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
+          padding: 1
         }}
         elevation={0}
       >
@@ -72,8 +73,8 @@ const Header = () => {
           style={{
             display: "flex",
             justifyContent: "space-between",
-            marginLeft: isSmallDevice ? 0 :"8rem",
-            marginRight: isSmallDevice ? 0 : "8rem",
+            marginLeft: isSmallDevice ? 0 :"11rem",
+            marginRight: isSmallDevice ? 0 : "11rem",
           }}
         >
           <Typography variant="h5" color="primary" sx={{ fontWeight: "400" }}>

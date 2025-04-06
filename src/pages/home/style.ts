@@ -63,10 +63,14 @@ const styles = (theme: Theme) => ({
     backgroundColor: theme.palette.primary.main,
   },
   summaryContainer: {
-    padding: "4% 8%",
+    padding: "4% 12%",
+    [theme.breakpoints.down("md")]: {
+      padding: "4% 8%",
+    },
   },
   paddingContainer: {
-    padding: "8%",
+    padding: "8% 12%",
+    
   },
   w100: {
     width: "100%",
@@ -87,7 +91,7 @@ const styles = (theme: Theme) => ({
   },
   imageContainer: {
     backgroundColor: theme.palette.tertiary.light,
-    padding: "25px",
+    padding: "40px",
     borderRadius: "50%",
     display: "flex",
     justifyContent: "center",
@@ -95,7 +99,7 @@ const styles = (theme: Theme) => ({
   },
   innerCircle: {
     backgroundColor: theme.palette.tertiary.main, 
-    padding: "20px",
+    padding: "25px",
     borderRadius: "50%",
     display: "flex",
     justifyContent: "center",

@@ -1,17 +1,24 @@
-import {
-  Button,
-} from "@mui/material";
+import { Button } from "@mui/material";
 import { useTheme } from "@mui/material";
 
 const ResumeDownloadButton = () => {
   const theme = useTheme();
 
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = "/pdf/resume.pdf";
+    link.download = "Bidyut Resume.pdf";
+    link.target = "_blank";
+    link.click();
+  };
+
   return (
     <Button
       variant="contained"
+      onClick={handleDownload}
       sx={{
         backgroundColor: theme.palette.tertiary.dark,
-        color: 'white',
+        color: "white",
         px: 4,
         py: 1.5,
         borderRadius: 2,

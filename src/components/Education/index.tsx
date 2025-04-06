@@ -1,5 +1,6 @@
 import { Box, Typography, Card, CardContent, useTheme } from "@mui/material";
 import { educationData } from "../../contants";
+import { motion } from "framer-motion";
 
 import styles from "./style";
 

@@ -8,114 +8,14 @@ import {
   useTheme,
 } from "@mui/material";
 import { motion } from "framer-motion";
-
-const skills = [
-  {
-    category: "Web Development",
-    skills: [
-      {
-        name: "JavaScript",
-        level: 95,
-        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-      },
-      {
-        name: "React",
-        level: 70,
-        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-      },
-      {
-        name: "Redux",
-        level: 80,
-        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg",
-      },
-      {
-        name: "RxJS",
-        level: 85,
-        icon: "https://rxjs.dev/assets/images/logos/Rx_Logo_S.png",
-      },
-      {
-        name: "Webpack",
-        level: 70,
-        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/webpack/webpack-original.svg",
-      },
-      {
-        name: "HTML",
-        level: 90,
-        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
-      },
-      {
-        name: "CSS / SCSS",
-        level: 85,
-        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
-      },
-    ],
-  },
-  {
-    category: "Backend Development",
-    skills: [
-      {
-        name: "Python",
-        level: 75,
-        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
-      },
-      {
-        name: "Node.js",
-        level: 80,
-        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
-      },
-      {
-        name: "Express.js",
-        level: 75,
-        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
-      },
-      {
-        name: "GraphQL",
-        level: 75,
-        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg",
-      },
-      {
-        name: "MySQL",
-        level: 85,
-        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
-      },
-      {
-        name: "MongoDB",
-        level: 80,
-        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
-      },
-    ],
-  },
-];
-
-const experiences = [
-  {
-    company: "Tezo",
-    position: "Software Developer",
-    duration: "2022 - 2024",
-    description:
-      "Worked within the banking system, encompassing everything from quote flow to purchase flow. Developed and integrated APIs for third-party services, enhancing transaction processing and data sharing capabilities.",
-    logo: "https://tezo.com/wp-content/uploads/2023/10/TezoLogo.svg",
-  },
-  {
-    company: "Amtron",
-    position: "Web Developer Consultant",
-    duration: "2020 - 2022",
-    description:
-      "Worked on Node.js for developments of in-house APIs and 3rd party vendor APIs, User Authentication/Authorization. Also have experienced in the development of frontend using React.js.",
-    logo: "https://www.developmentaid.org/files/organizationLogos/assam-electronics-development-corporation-ltd-amtron-76217.jpg",
-  },
-];
+import { skills, experiences } from "../../contants";
+import styles from "./style";
 
 const Resume = () => {
   const theme = useTheme();
+  const classes = styles(theme);
   return (
-    <Box
-      sx={{
-        padding: "60px 8%",
-        display: "flex",
-        justifyContent: "center",
-      }}
-    >
+    <Box sx={classes.container}>
       <Grid container spacing={4}>
         <Grid item xs={12} md={6}>
           <Grid item xs={12} md={6} sx={{ mb: 10 }}>
@@ -124,15 +24,14 @@ const Resume = () => {
             </Typography>
           </Grid>
 
-          {skills.map((category) => (
+          {skills.map((category, index) => (
             <motion.div
               whileHover={{ scale: 1.03 }}
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.2 }}
               viewport={{ once: true }}
-              key={category.category}
+              key={index}
             >
               <Card
                 sx={{
@@ -140,6 +39,7 @@ const Resume = () => {
                   padding: "20px",
                   borderRadius: "20px",
                 }}
+                key={index}
               >
                 <Typography variant="h5" style={{ marginBottom: "14px" }}>
                   {category.category}
@@ -240,10 +140,9 @@ const Resume = () => {
               ></Box>
               <motion.div
                 whileHover={{ scale: 1.03 }}
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5 }}
+                initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.3 }}
                 viewport={{ once: true }}
               >
                 <Card

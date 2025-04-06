@@ -14,14 +14,13 @@ interface CertificateCardProps {
   index: number;
 }
 
-const CertificateCard: React.FC<CertificateCardProps>  = ({ cert, index }) => {
+const CertificateCard: React.FC<CertificateCardProps> = ({ cert, index }) => {
   return (
     <motion.div
       whileHover={{ scale: 1.03 }}
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, x: -50 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.2 }}
       viewport={{ once: true }}
       key={index}
     >

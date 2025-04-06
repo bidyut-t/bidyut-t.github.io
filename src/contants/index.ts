@@ -88,3 +88,130 @@ export const profiles = [
     link: "",
   },
 ];
+
+export const skills = [
+  {
+    category: "Web Development",
+    skills: [
+      {
+        name: "JavaScript",
+        level: 95,
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+      },
+      {
+        name: "React",
+        level: 70,
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+      },
+      {
+        name: "Redux",
+        level: 80,
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg",
+      },
+      {
+        name: "RxJS",
+        level: 85,
+        icon: "https://rxjs.dev/assets/images/logos/Rx_Logo_S.png",
+      },
+      {
+        name: "Webpack",
+        level: 70,
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/webpack/webpack-original.svg",
+      },
+      {
+        name: "HTML",
+        level: 90,
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+      },
+      {
+        name: "CSS / SCSS",
+        level: 85,
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+      },
+    ],
+  },
+  {
+    category: "Backend Development",
+    skills: [
+      {
+        name: "Python",
+        level: 75,
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+      },
+      {
+        name: "Node.js",
+        level: 80,
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+      },
+      {
+        name: "Express.js",
+        level: 75,
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+      },
+      {
+        name: "GraphQL",
+        level: 75,
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg",
+      },
+      {
+        name: "MySQL",
+        level: 85,
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+      },
+      {
+        name: "MongoDB",
+        level: 80,
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+      },
+    ],
+  },
+  {
+    category: "Other Skills",
+    skills: [
+      {
+        name: "Android",
+        level: 50,
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg",
+      },
+      {
+        name: "Azure",
+        level: 60,
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg",
+      },
+      {
+        name: "GIT",
+        level: 80,
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+      },
+      {
+        name: "C Programming",
+        level: 85,
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg",
+      },
+      {
+        name: "Data Structure & Algorithms",
+        level: 85,
+        icon: "https://cdn-icons-png.flaticon.com/512/2621/2621048.png",
+      },
+    ],
+  },
+];
+
+export const experiences = [
+  {
+    company: "Tezo",
+    position: "Software Developer",
+    duration: "2022 - 2024",
+    description:
+      "Worked within the banking system, encompassing everything from quote flow to purchase flow. Developed and integrated APIs for third-party services, enhancing transaction processing and data sharing capabilities.",
+    logo: "https://tezo.com/wp-content/uploads/2023/10/TezoLogo.svg",
+  },
+  {
+    company: "Amtron",
+    position: "Web Developer Consultant",
+    duration: "2020 - 2022",
+    description:
+      "Worked on Node.js for developments of in-house APIs and 3rd party vendor APIs, User Authentication/Authorization. Also have experienced in the development of frontend using React.js.",
+    logo: "https://www.developmentaid.org/files/organizationLogos/assam-electronics-development-corporation-ltd-amtron-76217.jpg",
+  },
+];

@@ -7,6 +7,7 @@ import {
   Grid,
   useTheme,
 } from "@mui/material";
+import { motion } from "framer-motion";
 
 import { profiles } from "../../contants";
 
@@ -32,6 +33,14 @@ const ProfileLinksFooter = () => {
       <Grid container spacing={3} justifyContent="center" sx={{ mb: 6 }}>
         {profiles.map((profile, index) => (
           <Grid item key={index}>
+             <motion.div
+              whileHover={{ scale: 1.03 }}
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.2 }}
+              viewport={{ once: true }}
+              key={index}
+            >
             <Card
               sx={{
                 padding: 2,
@@ -49,6 +58,7 @@ const ProfileLinksFooter = () => {
                 <Typography>{profile.name}</Typography>
               </CardContent>
             </Card>
+            </motion.div>
           </Grid>
         ))}
       </Grid>
