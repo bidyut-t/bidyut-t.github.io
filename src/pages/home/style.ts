@@ -104,6 +104,22 @@ const styles = (theme: Theme) => ({
     px: "var(--section-pad-x)",
     py: "var(--section-pad-y)",
   },
+  aboutLayout: {
+    display: "grid",
+    gridTemplateColumns: { xs: "1fr", md: "minmax(0, 1.05fr) minmax(0, 0.95fr)" },
+    gap: { xs: 4, md: 5 },
+    alignItems: "center",
+  },
+  aboutCopy: {
+    minWidth: 0,
+  },
+  aboutGame: {
+    display: "flex",
+    justifyContent: { xs: "stretch", md: "stretch" },
+    alignItems: "center",
+    minWidth: 0,
+    width: "100%",
+  },
   aboutTitle: {
     fontFamily: "'Interval Pro Light', Georgia, serif",
     fontSize: { xs: "2rem", md: "2.75rem" },

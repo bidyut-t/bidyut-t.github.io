@@ -20,6 +20,7 @@ import EducationSection from "../../components/Education/index.tsx";
 import CertificateCard from "../../components/certificates/index.tsx";
 import ProfileLinksFooter from "../../components/profileLinkFooter/index.tsx";
 import ResumeDownloadButton from "../../components/common/resumeDownloadButton/index.tsx";
+import BreakoutGame from "../../components/breakoutGame/index.tsx";
 
 import { sections, certificates } from "../../contants/index.ts";
 import styles from "./style";
@@ -121,26 +122,33 @@ const Home = () => {
         sx={classes.about}
         {...fadeUp}
       >
-        <Typography component="h2" sx={classes.aboutTitle}>
-          About me
-        </Typography>
-        <Typography component="p" sx={classes.aboutBody}>
-          I've successfully developed and deployed robust web applications for a
-          global clientele, encompassing industries from finance to enterprise
-          solutions. My expertise lies in crafting intuitive, high-performance
-          user experiences while adhering to industry best practices.
-        </Typography>
-        <Typography component="p" sx={classes.aboutBody}>
-          Proficient in building scalable e-ticketing, payment, and insurance
-          systems. Demonstrated expertise in integrating AI APIs to enhance
-          application functionality.
-        </Typography>
-        <Typography component="p" sx={classes.aboutBody}>
-          Passionate about leveraging technology to drive innovation and deliver
-          exceptional user experiences.
-        </Typography>
-        <Box sx={classes.aboutCta}>
-          <ResumeDownloadButton light />
+        <Box sx={classes.aboutLayout}>
+          <Box sx={classes.aboutCopy}>
+            <Typography component="h2" sx={classes.aboutTitle}>
+              About me
+            </Typography>
+            <Typography component="p" sx={classes.aboutBody}>
+              I've successfully developed and deployed robust web applications for a
+              global clientele, encompassing industries from finance to enterprise
+              solutions. My expertise lies in crafting intuitive, high-performance
+              user experiences while adhering to industry best practices.
+            </Typography>
+            <Typography component="p" sx={classes.aboutBody}>
+              Proficient in building scalable e-ticketing, payment, and insurance
+              systems. Demonstrated expertise in integrating AI APIs to enhance
+              application functionality.
+            </Typography>
+            <Typography component="p" sx={classes.aboutBody}>
+              Passionate about leveraging technology to drive innovation and deliver
+              exceptional user experiences.
+            </Typography>
+            <Box sx={classes.aboutCta}>
+              <ResumeDownloadButton light />
+            </Box>
+          </Box>
+          <Box sx={classes.aboutGame}>
+            <BreakoutGame />
+          </Box>
         </Box>
       </Box>
 
