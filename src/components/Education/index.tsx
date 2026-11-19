@@ -1,6 +1,6 @@
-import { Box, Typography, Card, CardContent, useTheme } from "@mui/material";
+import { Box, Typography, useTheme } from "@mui/material";
+import { motion } from "framer-motion";
 import { educationData } from "../../contants";
-
 import styles from "./style";
 
 const EducationSection = () => {
@@ -9,51 +9,37 @@ const EducationSection = () => {
 
   return (
     <Box
+      component={motion.div}
       sx={classes.container}
+      initial={{ opacity: 0, y: 28 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.65, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.2 }}
     >
-      <Typography variant="h4" textAlign="center" mb={4}>
+      <Typography component="h2" sx={classes.title}>
         Education
       </Typography>
-      <Box display="flex" flexDirection="column" gap={4} alignItems="center">
-        {educationData.map((edu, index) => (
-          <Card
-            key={index}
-            sx={classes.card}
-          >
-            <CardContent sx={classes.cardContent}>
-              <Box
-                component="img"
-                src={edu.logo}
-                alt="logo"
-                sx={{ width: { xs: 50, md: 60 }, height: { xs: 50, md: 60 } }}
-              />
-              <Box>
-                <Typography sx={classes.degreeText}>
-                  {edu.degree}
-                </Typography>
-                <Typography sx={classes.fieldText}>
-                  {edu.field}
-                </Typography>
-                <Typography sx={classes.institutionText}>
-                  {edu.institution}
-                </Typography>
-                <Typography
-                  variant="body2"
-                  color="text.secondary"
-                  fontStyle="italic"
-                >
-                  Grade: {edu.grade}
-                </Typography>
-              </Box>
-            </CardContent>
+      <Box sx={classes.list}>
+        {educationData.map((edu) => (
+          <Box key={`${edu.institution}-${edu.degree}`} sx={classes.item}>
             <Box
-              sx={classes.rightSection}
-            >
-              <Typography>{edu.endDate}</Typography>
-              <Box sx={classes.verticalDivider} />
-              <Typography>{edu.startDate}</Typography>
+              component="img"
+              src={edu.logo}
+              alt=""
+              sx={classes.logo}
+            />
+            <Box>
+              <Typography sx={classes.degreeText}>{edu.degree}</Typography>
+              <Typography sx={classes.fieldText}>{edu.field}</Typography>
+              <Typography sx={classes.institutionText}>
+                {edu.institution}
+              </Typography>
+              <Typography sx={classes.gradeText}>Grade: {edu.grade}</Typography>
             </Box>
-          </Card>
+            <Typography sx={classes.dates}>
+              {edu.startDate} — {edu.endDate}
+            </Typography>
+          </Box>
         ))}
       </Box>
     </Box>

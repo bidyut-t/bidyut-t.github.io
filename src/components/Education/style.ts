@@ -2,55 +2,65 @@ import { Theme } from "@mui/material";
 
 const styles = (theme: Theme) => ({
   container: {
-    backgroundColor: theme.palette.background.paper,
-    padding: "4rem",
-    marginTop: theme.spacing(6),
-    [theme.breakpoints.down("md")]: {
-      padding: "2rem",
-    },
+    backgroundColor: theme.palette.tertiary.main,
+    px: "var(--section-pad-x)",
+    py: "var(--section-pad-y)",
   },
-  card: {
-    display: "flex",
-    flexDirection: "column", // default (xs)
-    width: "100%",
-    maxWidth: "800px",
-    boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
-    borderRadius: "16px",
-
-    [theme.breakpoints.up("md")]: {
-      flexDirection: "row",
-    },
+  title: {
+    fontFamily: "'Interval Pro Light', Georgia, serif",
+    fontSize: { xs: "1.85rem", md: "2.35rem" },
+    color: theme.palette.primary.main,
+    mb: 5,
   },
-  cardContent: {
-    display: "flex",
-    alignItems: "center",
-    gap: 2,
-  },
-  rightSection: {
-    marginLeft: "auto",
-    alignItems: "center",
-    padding: theme.spacing(2),
+  list: {
     display: "flex",
     flexDirection: "column",
-    justifyContent: "center",
-    color: theme.palette.primary.main,
-
-    [theme.breakpoints.down("md")]: {
-      display: "none",
+    gap: 0,
+    maxWidth: 900,
+  },
+  item: {
+    display: "grid",
+    gridTemplateColumns: { xs: "1fr", md: "auto 1fr auto" },
+    gap: { xs: 2, md: 3 },
+    alignItems: "center",
+    py: 3.5,
+    borderTop: `1px solid ${theme.palette.divider}`,
+    "&:last-child": {
+      borderBottom: `1px solid ${theme.palette.divider}`,
     },
   },
+  logo: {
+    width: { xs: 48, md: 56 },
+    height: { xs: 48, md: 56 },
+    objectFit: "contain",
+    backgroundColor: theme.palette.background.paper,
+    p: 0.5,
+  },
   degreeText: {
-    fontWeight: "bold",
+    fontSize: { xs: "1.1rem", md: "1.2rem" },
+    color: theme.palette.primary.main,
+    mb: 0.5,
   },
   fieldText: {
-    fontWeight: 600,
+    color: theme.palette.secondary.main,
+    fontSize: "0.95rem",
+    mb: 0.5,
   },
   institutionText: {
     color: theme.palette.text.secondary,
+    fontSize: "0.95rem",
   },
-  verticalDivider: {
-    borderLeft: `2px solid ${theme.palette.primary.main}`,
-    height: "40px",
+  gradeText: {
+    color: theme.palette.text.secondary,
+    fontSize: "0.9rem",
+    fontStyle: "italic",
+    mt: 0.75,
+  },
+  dates: {
+    textAlign: { xs: "left", md: "right" },
+    color: theme.palette.text.secondary,
+    fontSize: "0.9rem",
+    whiteSpace: "nowrap",
   },
 });
 

@@ -1,5 +1,5 @@
-import { Card, CardContent, Typography, Link } from "@mui/material";
-import { motion } from "framer-motion";
+import { Box, Typography, Link, useTheme } from "@mui/material";
+
 interface Certificate {
   title: string;
   date: string;
@@ -14,48 +14,70 @@ interface CertificateCardProps {
   index: number;
 }
 
-const CertificateCard: React.FC<CertificateCardProps> = ({ cert, index }) => {
+const CertificateCard: React.FC<CertificateCardProps> = ({ cert }) => {
+  const theme = useTheme();
+
   return (
-    <motion.div
-      whileHover={{ scale: 1.03 }}
-      initial={{ opacity: 0, x: -50 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.2 }}
-      viewport={{ once: true }}
-      key={index}
+    <Box
+      sx={{
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+        gap: 1.5,
+        py: 2.5,
+        borderTop: `1px solid ${theme.palette.divider}`,
+      }}
     >
-      <Card elevation={3}>
-        <CardContent>
-          <img
-            src={cert.logo}
-            alt={cert.organization}
-            style={{
-              height: "70px",
-              width: "70px",
-              marginBottom: "10px",
-              objectFit: "contain",
-            }}
-          />
-          <Typography variant="h6" gutterBottom>
-            {cert.title}
-          </Typography>
-          <Typography variant="body2">Date: {cert.date}</Typography>
-          {cert.credentialId && (
-            <Typography variant="body2">
-              Credential ID: {cert.credentialId}
-            </Typography>
-          )}
-          <Link
-            href={cert.link}
-            color="primary"
-            underline="hover"
-            style={{ marginTop: "0.5rem", display: "block" }}
-          >
-            View Certificate
-          </Link>
-        </CardContent>
-      </Card>
-    </motion.div>
+      <Box
+        component="img"
+        src={cert.logo}
+        alt=""
+        sx={{
+          height: 48,
+          width: 48,
+          objectFit: "contain",
+        }}
+      />
+      <Typography
+        sx={{
+          fontSize: "1.05rem",
+          color: theme.palette.primary.main,
+          lineHeight: 1.35,
+        }}
+      >
+        {cert.title}
+      </Typography>
+      <Typography
+        variant="body2"
+        sx={{ color: theme.palette.text.secondary }}
+      >
+        {cert.organization} · {cert.date}
+      </Typography>
+      {cert.credentialId ? (
+        <Typography
+          variant="body2"
+          sx={{ color: theme.palette.text.secondary, wordBreak: "break-all" }}
+        >
+          Credential ID: {cert.credentialId}
+        </Typography>
+      ) : null}
+      {cert.link ? (
+        <Link
+          href={cert.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          underline="hover"
+          sx={{
+            mt: "auto",
+            pt: 1,
+            color: theme.palette.secondary.main,
+            fontSize: "0.9rem",
+          }}
+        >
+          View Certificate
+        </Link>
+      ) : null}
+    </Box>
   );
 };
 

@@ -1,86 +1,139 @@
-import {
-  Box,
-  Typography,
-  Card,
-  CardContent,
-  Avatar,
-  Grid,
-  useTheme,
-} from "@mui/material";
-import { motion } from "framer-motion";
-
+import { Box, Typography, Link, useTheme } from "@mui/material";
+import { Email, Phone, LocationOn } from "@mui/icons-material";
 import { profiles } from "../../contants";
 
 const ProfileLinksFooter = () => {
   const theme = useTheme();
+
   return (
     <Box
       sx={{
-        backgroundColor: theme.palette.tertiary.main,
-        padding: "60px 20px",
+        backgroundColor: theme.palette.primary.main,
+        color: theme.palette.primary.contrastText,
+        px: "var(--section-pad-x)",
+        py: "var(--section-pad-y)",
       }}
     >
-      {/* Profile Links Section */}
       <Typography
-        variant="h4"
-        align="center"
-        gutterBottom
-        sx={{ mb: 6, mt: 4, fontWeight: 400 }}
+        component="h2"
+        sx={{
+          fontFamily: "'Interval Pro Light', Georgia, serif",
+          fontSize: { xs: "1.85rem", md: "2.35rem" },
+          mb: 5,
+          color: "#FAF8F4",
+        }}
       >
         Profile Links
       </Typography>
 
-      <Grid container spacing={3} justifyContent="center" sx={{ mb: 6 }}>
-        {profiles.map((profile, index) => (
-          <Grid item key={index}>
-             <motion.div
-              whileHover={{ scale: 1.03 }}
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.2 }}
-              viewport={{ once: true }}
-              key={index}
-            >
-            <Card
+      <Box
+        sx={{
+          display: "flex",
+          flexWrap: "wrap",
+          gap: { xs: 3, md: 5 },
+          mb: 6,
+        }}
+      >
+        {profiles.map((profile) =>
+          profile.link ? (
+            <Link
+              key={profile.name}
+              href={profile.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              underline="none"
               sx={{
-                padding: 2,
-                minWidth: 140,
-                textAlign: "center",
-                boxShadow: 3,
-                borderRadius: 2,
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 1.5,
+                color: "#FAF8F4",
+                borderBottom: "1px solid transparent",
+                pb: 0.5,
+                transition: "border-color 0.2s ease, color 0.2s ease",
+                "&:hover": {
+                  color: theme.palette.secondary.light,
+                  borderBottomColor: theme.palette.secondary.light,
+                },
               }}
-              onClick={() => window.open(profile.link, "_blank")}
             >
-              <CardContent>
-                <Avatar
-                  src={profile.icon}
-                  sx={{ width: 40, height: 40, margin: "0 auto 10px" }}
-                />
-                <Typography>{profile.name}</Typography>
-              </CardContent>
-            </Card>
-            </motion.div>
-          </Grid>
-        ))}
-      </Grid>
+              <Box
+                component="img"
+                src={profile.icon}
+                alt=""
+                sx={{
+                  width: 22,
+                  height: 22,
+                  filter: "brightness(0) invert(1)",
+                  opacity: 0.9,
+                }}
+              />
+              <Typography component="span" sx={{ fontSize: "1.05rem" }}>
+                {profile.name}
+              </Typography>
+            </Link>
+          ) : (
+            <Box
+              key={profile.name}
+              sx={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 1.5,
+                color: "rgba(250, 248, 244, 0.45)",
+              }}
+            >
+              <Box
+                component="img"
+                src={profile.icon}
+                alt=""
+                sx={{
+                  width: 22,
+                  height: 22,
+                  filter: "brightness(0) invert(1)",
+                  opacity: 0.45,
+                }}
+              />
+              <Typography component="span" sx={{ fontSize: "1.05rem" }}>
+                {profile.name}
+              </Typography>
+            </Box>
+          )
+        )}
+      </Box>
 
-      {/* Contact Info */}
-      {/* <Box sx={{ textAlign: "left", maxWidth: 400, margin: "0 auto" }}>
-        <Typography variant="h6" gutterBottom>
-          Get in touch
-        </Typography>
-        <Box display="flex" alignItems="center" mb={1}>
-          <EmailIcon fontSize="small" sx={{ mr: 1 }} />
-          <Typography variant="body1">prasenjeetpaul14@gmail.com</Typography>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: { xs: "column", sm: "row" },
+          flexWrap: "wrap",
+          gap: { xs: 1.5, sm: 3 },
+          mb: 6,
+          color: "rgba(250, 248, 244, 0.75)",
+        }}
+      >
+        <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+          <Email sx={{ fontSize: 18, color: theme.palette.secondary.light }} />
+          <Typography variant="body2">bidyut3004@gmail.com</Typography>
         </Box>
-        <Box display="flex" alignItems="center">
-          <PhoneIcon fontSize="small" sx={{ mr: 1 }} />
-          <Typography variant="body1">+1 9803459457</Typography>
+        <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+          <Phone sx={{ fontSize: 18, color: theme.palette.secondary.light }} />
+          <Typography variant="body2">+91 7002762871</Typography>
         </Box>
-      </Box> */}
+        <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+          <LocationOn
+            sx={{ fontSize: 18, color: theme.palette.secondary.light }}
+          />
+          <Typography variant="body2">Hyderabad, India</Typography>
+        </Box>
+      </Box>
 
-      {/* Footer */}
-      <Typography variant="body2" align="center" sx={{ mt: 6 }}>
+      <Typography
+        variant="body2"
+        sx={{
+          color: "rgba(250, 248, 244, 0.45)",
+          borderTop: "1px solid rgba(250, 248, 244, 0.12)",
+          pt: 3,
+        }}
+      >
         © 2025 Bidyut Talukdar | All rights reserved
       </Typography>
     </Box>

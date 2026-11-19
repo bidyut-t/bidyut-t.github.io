@@ -1,115 +1,137 @@
 import { Theme } from "@mui/material";
 
 const styles = (theme: Theme) => ({
-  container: {
-    marginTop: theme.spacing(6),
-    padding: "4% 6%",
+  page: {
+    width: "100%",
+    overflowX: "hidden",
   },
-  overViewSection: {
-    fontWeight: "800",
-    padding: "4%",
-    fontSize: "2.5rem",
-    [theme.breakpoints.down("md")]: {
-      fontSize: "1.4rem",
+  hero: {
+    position: "relative",
+    minHeight: "100vh",
+    display: "flex",
+    alignItems: "stretch",
+    backgroundColor: theme.palette.background.default,
+    backgroundImage:
+      "radial-gradient(ellipse 80% 60% at 70% 20%, rgba(15, 110, 106, 0.08), transparent 55%), radial-gradient(ellipse 50% 40% at 10% 80%, rgba(232, 228, 220, 0.9), transparent 50%)",
+    pt: { xs: 10, md: 0 },
+  },
+  heroInner: {
+    width: "100%",
+    display: "grid",
+    gridTemplateColumns: { xs: "1fr", md: "1.05fr 0.95fr" },
+    minHeight: { xs: "auto", md: "100vh" },
+  },
+  heroContent: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    px: "var(--section-pad-x)",
+    py: { xs: 5, md: 8 },
+    gap: { xs: 2, md: 2.25 },
+    maxWidth: { md: 640 },
+  },
+  brandName: {
+    fontFamily: "'Interval Pro Light', Georgia, serif",
+    fontSize: { xs: "2.6rem", sm: "3.25rem", md: "3.75rem", lg: "4.25rem" },
+    fontWeight: 400,
+    lineHeight: 1.02,
+    letterSpacing: "-0.03em",
+    color: theme.palette.primary.main,
+    m: 0,
+  },
+  roleLine: {
+    fontSize: { xs: "1.1rem", md: "1.25rem" },
+    color: theme.palette.text.secondary,
+    fontWeight: 400,
+    letterSpacing: "0.01em",
+    "& span": {
+      color: theme.palette.secondary.main,
     },
   },
-  aboutSectionOne: {
-    // backgroundImage: 'linear-gradient(to right, #161F2A , #e6e6e6)',
-    alignItems: "left",
-    [theme.breakpoints.down("md")]: {
-      marginTop: theme.spacing(10)
+  contactRow: {
+    mt: 0.5,
+    gap: 1,
+  },
+  contactItem: {
+    color: theme.palette.text.secondary,
+    fontSize: "0.95rem",
+    "& .MuiSvgIcon-root": {
+      fontSize: "1.1rem",
+      color: theme.palette.secondary.main,
     },
   },
-  aboutSectionTwo: {
-    // backgroundImage: 'linear-gradient(to right,#fff, #161F2A )',
-    [theme.breakpoints.down("md")]: {
-      backgroundImage: "linear-gradient(to right, #161F2A , #161F2A)",
-      display: "none",
+  ctaRow: {
+    mt: 2,
+    display: "flex",
+    flexWrap: "wrap",
+    alignItems: "center",
+    gap: 1.5,
+  },
+  socialButton: {
+    color: theme.palette.primary.main,
+    border: `1px solid ${theme.palette.divider}`,
+    borderRadius: 1,
+    "&:hover": {
+      backgroundColor: theme.palette.tertiary.main,
+      borderColor: theme.palette.secondary.main,
+      color: theme.palette.secondary.main,
     },
   },
-  aboutContainer: {
-    padding: "6% 4%",
+  heroVisual: {
+    display: { xs: "none", md: "block" },
+    position: "relative",
+    minHeight: { md: "100%" },
+    overflow: "hidden",
+    backgroundColor: theme.palette.background.default,
+    pt: { md: 9 },
+  },
+  heroImage: {
+    width: "100%",
+    height: { xs: "100%", md: "calc(100% - 72px)" },
+    objectFit: "cover",
+    objectPosition: "center top",
+    display: "block",
+    position: { xs: "relative", md: "absolute" },
+    top: { md: 72 },
+    left: { md: 0 },
+    right: { md: 0 },
+    bottom: { md: 0 },
+    minHeight: { xs: 360, sm: 440, md: "auto" },
+  },
+  about: {
+    backgroundColor: theme.palette.primary.main,
+    color: theme.palette.primary.contrastText,
+    px: "var(--section-pad-x)",
+    py: "var(--section-pad-y)",
   },
   aboutTitle: {
+    fontFamily: "'Interval Pro Light', Georgia, serif",
+    fontSize: { xs: "2rem", md: "2.75rem" },
+    color: "#FAF8F4",
+    mb: 3,
+    maxWidth: 520,
+  },
+  aboutBody: {
+    color: "rgba(250, 248, 244, 0.82)",
+    fontSize: { xs: "1rem", md: "1.1rem" },
+    lineHeight: 1.75,
+    maxWidth: 640,
+    m: 0,
+    mb: 2,
+  },
+  aboutCta: {
+    mt: 4,
+  },
+  section: {
+    px: "var(--section-pad-x)",
+    py: "var(--section-pad-y)",
+  },
+  sectionTitle: {
+    fontFamily: "'Interval Pro Light', Georgia, serif",
+    fontSize: { xs: "1.85rem", md: "2.35rem" },
+    mb: 5,
     color: theme.palette.primary.main,
-    fontWeight: 600,
-    fontSize: "2.5rem",
-    [theme.breakpoints.down("md")]: {
-      fontSize: "1.4rem",
-    },
-  },
-  aboutSubtitle: {
-    color: theme.palette.primary.main,
-    marginTop: theme.spacing(3),
-    fontSize: "1rem",
-    [theme.breakpoints.down("md")]: {
-      fontSize: "0.8rem",
-    },
-  },
-  aboutDescription: {
-    color: theme.palette.primary.main,
-    fontSize: "0.8rem",
-    textAlign: "auto",
-  },
-  aboutImage: {
-    [theme.breakpoints.down("md")]: {
-      display: "none",
-    },
-  },
-  myImage: {
-    maxWidth: "100%",
-  },
-  summary: {
-    backgroundColor: theme.palette.primary.main,
-  },
-  summaryContainer: {
-    padding: "4% 12%",
-    [theme.breakpoints.down("md")]: {
-      padding: "4% 8%",
-    },
-  },
-  paddingContainer: {
-    padding: "8% 12%",
-    
-  },
-  w100: {
-    width: "100%",
-  },
-  mainSection: {
-    minHeight: "50%",
-  },
-
-  imageDiv: {
-    margin: "3% -50% 2% -10%",
-    borderRadius: "50%",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    [theme.breakpoints.down("md")]: {
-      display:'none'
-    },
-  },
-  imageContainer: {
-    backgroundColor: theme.palette.tertiary.light,
-    padding: "40px",
-    borderRadius: "50%",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  innerCircle: {
-    backgroundColor: theme.palette.tertiary.main, 
-    padding: "25px",
-    borderRadius: "50%",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  image: {
-    width: "250px",
-    height: "250px",
-    borderRadius: "50%",
-    objectFit: "cover",
   },
 });
+
 export default styles;

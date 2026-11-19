@@ -1,38 +1,54 @@
 import { Button } from "@mui/material";
 import { useTheme } from "@mui/material";
+import { motion } from "framer-motion";
 
-const ResumeDownloadButton = () => {
+interface ResumeDownloadButtonProps {
+  light?: boolean;
+}
+
+const ResumeDownloadButton = ({ light = false }: ResumeDownloadButtonProps) => {
   const theme = useTheme();
 
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "/portfolio/pdf/resume.pdf";
+    link.href = "./pdf/resume.pdf";
     link.download = "Bidyut Resume.pdf";
     link.target = "_blank";
     link.click();
   };
 
   return (
-    <Button
-      variant="contained"
-      onClick={handleDownload}
-      sx={{
-        backgroundColor: theme.palette.tertiary.dark,
-        color: "white",
-        px: 4,
-        py: 1.5,
-        borderRadius: 2,
-        fontSize: "1rem",
-        animation: "breath 3s ease-in-out infinite",
-        "@keyframes breath": {
-          "0%": { transform: "scale(1)" },
-          "50%": { transform: "scale(1.05)" },
-          "100%": { transform: "scale(1)" },
-        },
-      }}
+    <motion.div
+      whileHover={{ y: -2 }}
+      transition={{ duration: 0.2 }}
+      style={{ display: "inline-block" }}
     >
-      Resume
-    </Button>
+      <Button
+        variant="contained"
+        onClick={handleDownload}
+        sx={{
+          backgroundColor: light
+            ? theme.palette.background.paper
+            : theme.palette.secondary.main,
+          color: light ? theme.palette.primary.main : "#FFFFFF",
+          px: 3.5,
+          py: 1.25,
+          borderRadius: 1,
+          fontSize: "0.95rem",
+          letterSpacing: "0.04em",
+          border: light
+            ? `1px solid ${theme.palette.background.paper}`
+            : "1px solid transparent",
+          "&:hover": {
+            backgroundColor: light
+              ? theme.palette.tertiary.main
+              : theme.palette.secondary.dark,
+          },
+        }}
+      >
+        Download Resume
+      </Button>
+    </motion.div>
   );
 };
 
