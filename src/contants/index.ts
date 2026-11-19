@@ -39,7 +39,7 @@ export const certificates = [
     date: "Oct 2026",
     credentialId: "98fd422d372052e7c88044b352a9d9b0",
     organization: "Anthropic",
-    link: "https://www.linkedin.com/in/bidyut-talukdar/details/certifications/",
+    link: "https://academy.claude.com/verify/98fd422d372052e7c88044b352a9d9b0",
     logo: anthropicLogo,
   },
   {
@@ -47,7 +47,7 @@ export const certificates = [
     date: "Sep 2026",
     credentialId: "d7665e21d05d5a25db07124a07bf7e20",
     organization: "Anthropic",
-    link: "https://www.linkedin.com/in/bidyut-talukdar/details/certifications/",
+    link: "https://academy.claude.com/verify/d7665e21d05d5a25db07124a07bf7e20",
     logo: anthropicLogo,
   },
   {
@@ -55,7 +55,7 @@ export const certificates = [
     date: "Sep 2026",
     credentialId: "d277de122daafe110633579dfdaf98d9",
     organization: "Anthropic",
-    link: "https://www.linkedin.com/in/bidyut-talukdar/details/certifications/",
+    link: "https://academy.claude.com/verify/d277de122daafe110633579dfdaf98d9",
     logo: anthropicLogo,
   },
   {
